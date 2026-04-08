@@ -2,9 +2,9 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <div className=" w-full bg-footerblack ">
-      <div className="max-w-7xl mx-auto py-6 ">
-        <div className="py-4 flex justify-between items-center ">
+    <div className=" w-full bg-footerblack font-main ">
+      <div className="max-w-7xl mx-auto py-6 px-12 md:px-0 ">
+        <div className="py-4  flex flex-col gap-8 md:flex-row justify-between md:items-center ">
           {/* LOGO */}
           <div>
             <Image
@@ -17,7 +17,7 @@ const Footer = () => {
           </div>
 
           {/* DESKTOP MENU */}
-          <nav className="hidden md:flex  gap-8 text-white font-medium">
+          <nav className="flex md:flex-row flex-col  gap-8 text-white font-light">
             <a href="#" className="hover:text-primary transition">
               About
             </a>
@@ -36,7 +36,7 @@ const Footer = () => {
           </nav>
         </div>
 
-        <p className="text-center text-white mt-3">
+        <p className="md:text-center text-left text-white font-light mt-3">
           © 2025 Primetime Wellness. All rights reserved. · Ibadan, Oyo State,
           Nigeria
         </p>

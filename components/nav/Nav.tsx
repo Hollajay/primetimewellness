@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
+import Icon from "../ui/Icon";
 
 const Nav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -50,12 +50,7 @@ const Nav = () => {
 
               {/* LOGO */}
               <div>
-                <Image
-                  width={73}
-                  height={67}
-                  src={"/logo.png"}
-                  alt="primetime logo"
-                />
+               <Icon type={'logo'} />
               </div>
 
               {/* DESKTOP MENU */}

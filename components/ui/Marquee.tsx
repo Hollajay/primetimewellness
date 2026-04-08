@@ -14,6 +14,18 @@ const items = [
   "5-ASIDE PITCH",
   "•",
   "SWIMMING",
+   "•",
+   "HIIT",
+  "•",
+  "BELLYBLAST",
+  "•",
+  "SPA",
+  "•",
+  "AEROBICS",
+  "•",
+  "5-ASIDE PITCH",
+  "•",
+  "SWIMMING",
 ];
 
 export default function Marquee() {

@@ -93,7 +93,7 @@ export default function GetInTouch() {
           {/* Form */}
           <form className="space-y-8">
             <div className=" flex flex-col gap-2">
-              <label className="text-lg font-light ">Full Name</label>
+              <label className="text-lg font-extralight font-title ">Full Name</label>
               <input
                 type="text"
                 placeholder="Your Name"

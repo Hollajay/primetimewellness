@@ -12,7 +12,6 @@ const programs = [
     title: "Aerobics",
     desc: "High-energy cardio sessions that get your heart pumping and calories burning. Fun, fast, effective.",
     image: "/img/aerobics.png",
-  
   },
   {
     title: "Swimming",
@@ -28,7 +27,6 @@ const programs = [
     title: "Boxing",
     desc: "Build power, speed, and confidence with expert-led boxing classes.",
     image: "/img/boxing.png",
-   
   },
   {
     title: "HIIT",
@@ -42,7 +40,6 @@ const programs = [
   },
 ];
 
-
 export default function OurPrograms() {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -55,10 +52,9 @@ export default function OurPrograms() {
 
   return (
     <section className="bg-black text-white py-24 font-main">
-
       {/* HEADER */}
       <div className="max-w-7xl mx-auto px-6 space-y-1 mb-16">
-          <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2">
           <span className="w-6 h-[1px] bg-red-500 shrink-0" />
 
           <p className="text-red-500 uppercase font-main tracking-widest text-sm leading-none">
@@ -68,7 +64,10 @@ export default function OurPrograms() {
         <h2 className="text-5xl md:text-6xl font-normal font-title">
           OUR <span className="text-red-600">PROGRAMS</span>
         </h2>
-        <p className="max-w-lg">Six powerful fitness programs, each designed to push your limits and deliver real results. Find your match.</p>
+        <p className="max-w-lg">
+          Six powerful fitness programs, each designed to push your limits and
+          deliver real results. Find your match.
+        </p>
       </div>
 
       {/* MOBILE */}
@@ -92,23 +91,22 @@ export default function OurPrograms() {
           </Swiper>
         </div>
       ) : (
-        
-           <DesktopLayout />
-      
-        
+        <DesktopLayout />
       )}
+      <div className="flex items-center justify-center mt-6">
+        <button className="w-auto bg-red-600 hover:bg-deepprimary px-6 py-4 font-main font-semibold transition">
+          Ask About Classes
+        </button>
+      </div>
     </section>
   );
 }
 
-
 function DesktopLayout() {
   return (
     <div className="max-w-7xl mx-auto px-6">
-      
       <div className="grid md:grid-cols-2 ">
         {programs.map((item, i) => {
-          
           // reverse layout for specific items
           const isReverse = i === 2 || i === 3; // yoga, boxing
 
@@ -118,11 +116,8 @@ function DesktopLayout() {
           return (
             <div
               key={i}
-              className={`flex h-full ${
-                isReverse ? "flex-row-reverse" : ""
-              }`}
+              className={`flex h-full ${isReverse ? "flex-row-reverse" : ""}`}
             >
-              
               {/* Image */}
               <div className="w-1/2">
                 <Image
@@ -151,25 +146,17 @@ function DesktopLayout() {
                   {item.desc}
                 </p>
               </div>
-
             </div>
           );
         })}
       </div>
-
     </div>
   );
 }
 
-
-
-
-
-
 function MobileCard({ item }: any) {
   return (
     <div className="bg-cardblack hover:bg-deepprimary overflow-hidden">
-
       {/* IMAGE */}
       <div className="relative h-[346px]">
         <Image
@@ -183,10 +170,10 @@ function MobileCard({ item }: any) {
 
       {/* TEXT */}
       <div className="px-4 py-8 flex flex-col items-center justify-center">
-        <h3 className="md:text-[42px] text-[30px] font-title font-normal text-center">{item.title}</h3>
-        <p className="text-lg text-white  text-center mt-2">
-          {item.desc}
-        </p>
+        <h3 className="md:text-[42px] text-[30px] font-title font-normal text-center">
+          {item.title}
+        </h3>
+        <p className="text-lg text-white  text-center mt-2">{item.desc}</p>
       </div>
     </div>
   );

@@ -8,7 +8,7 @@ interface IconProps {
 
 type SingleIcon = Omit<IconProps, "type">;
 
-const Logo = ({ width, height, color, fill }) => {
+const Logo = ({ width, height, color, fill }: SingleIcon) => {
   return (
     <svg
       width="73"
