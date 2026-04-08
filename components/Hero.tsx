@@ -4,9 +4,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const images = [
-  "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b",
-  "https://images.unsplash.com/photo-1508098682722-e99c43a406b2",
-  "https://images.unsplash.com/photo-1544161515-4ab6ce6db874",
+  "/img/hero3.jpg",
+  "/img/hero2.jpg",
+  "/img/hero1.jpg",
   "https://images.unsplash.com/photo-1560090995-01632a28895b",
 ];
 
@@ -57,7 +57,7 @@ export default function Hero() {
             Wellness with Purpose
           </span>
 
-          <h1 className="text-5xl md:text-[90px] font-title font-normal leading-tight md:text-left text-center">
+          <h1 className="text-[62px] md:text-[90px] font-title font-normal leading-tight md:text-left text-center">
             YOUR <span className="text-red-600">PRIME</span> TIME
           </h1>
           <span className="md:hidden flex items-center justify-center py-1 text-center bg-deepprimary text-xs px-3  rounded">
@@ -84,22 +84,7 @@ export default function Hero() {
         </div>
 
         {/* Stats */}
-        <div className="hidden lg:flex gap-10 mt-12 text-sm">
-          <div>
-            <h3 className="text-red-500 text-2xl font-bold">6+</h3>
-            <p className="text-gray-400">Fitness Programs</p>
-          </div>
-
-          <div>
-            <h3 className="text-red-500 text-2xl font-bold">4</h3>
-            <p className="text-gray-400">World-class facilities</p>
-          </div>
-
-          <div>
-            <h3 className="text-red-500 text-2xl font-bold">100%</h3>
-            <p className="text-gray-400">Committed to YOU</p>
-          </div>
-        </div>
+      
       </div>
 
       {/* Bottom Scroller */}

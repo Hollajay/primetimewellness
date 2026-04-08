@@ -36,8 +36,8 @@ const programs = [
     image: "/img/hiit.jpg",
   },
   {
-    title: "Bellyblast & Bodyweight",
-    desc: "Targeted core workouts to build a strong, defined midsection.",
+    title: "Bellyblast & Bodyweight Blast",
+    desc: "Targeted core sessions + equipment-free total body workouts. Results you can see and feel.",
     image: "/img/bellyblast.jpg",
   },
 ];
@@ -65,7 +65,7 @@ export default function OurPrograms() {
             WHAT WE OFFER
           </p>
         </div>
-        <h2 className="text-4xl md:text-6xl font-normal font-title">
+        <h2 className="text-5xl md:text-6xl font-normal font-title">
           OUR <span className="text-red-600">PROGRAMS</span>
         </h2>
         <p className="max-w-lg">Six powerful fitness programs, each designed to push your limits and deliver real results. Find your match.</p>
@@ -80,7 +80,7 @@ export default function OurPrograms() {
             spaceBetween={20}
             autoplay={{ delay: 3000 }}
             breakpoints={{
-              320: { slidesPerView: 1.2 },
+              320: { slidesPerView: 1.1 },
               640: { slidesPerView: 2 },
             }}
           >
@@ -144,10 +144,10 @@ function DesktopLayout() {
                   
                 `}
               >
-                <h1 className="text-xl font-bold mb-3">
+                <h1 className="text-[42px] font-normal font-title text-center mb-3">
                   {item.title}
                 </h1>
-                <p className={`${hasRedBg ? "text-white/90" : ""}`}>
+                <p className={`${hasRedBg ? "text-white/90" : ""} text-center`}>
                   {item.desc}
                 </p>
               </div>
@@ -168,10 +168,10 @@ function DesktopLayout() {
 
 function MobileCard({ item }: any) {
   return (
-    <div className="bg-[#0a0a0a] overflow-hidden">
+    <div className="bg-cardblack hover:bg-deepprimary overflow-hidden">
 
       {/* IMAGE */}
-      <div className="relative h-[200px]">
+      <div className="relative h-[346px]">
         <Image
           src={item.image}
           alt={item.title}
@@ -182,9 +182,9 @@ function MobileCard({ item }: any) {
       </div>
 
       {/* TEXT */}
-      <div className="p-4">
-        <h3 className="text-lg font-bold">{item.title}</h3>
-        <p className="text-xs text-gray-400 mt-2">
+      <div className="px-4 py-8 flex flex-col items-center justify-center">
+        <h3 className="md:text-[42px] text-[30px] font-title font-normal text-center">{item.title}</h3>
+        <p className="text-lg text-white  text-center mt-2">
           {item.desc}
         </p>
       </div>

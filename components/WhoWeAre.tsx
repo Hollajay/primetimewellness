@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function WhoWeAre() {
   return (
-    <section className="bg-[#0b0000] text-white py-20 px-6 font-main">
+    <section className="bg-[#0b0000] text-white py-20  font-main">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         
         {/* LEFT IMAGE */}
@@ -23,26 +23,26 @@ export default function WhoWeAre() {
           </div>
 
           {/* Stats Overlay */}
-          <div className="absolute bottom-0 right-0 w-[80%] bg-black/90 px-6 py-5 flex justify-between text-center border-t border-red-900/30">
+          <div className="absolute bottom-0 right-0 w-full md:w-[80%] gap-2 bg-black/90 px-6 py-5 flex justify-between text-center border-t border-red-900/30">
             <div>
-              <h3 className="text-red-600 text-4xl text-left font-title ">6+</h3>
-              <p className="text-sm text-white">Fitness Programs</p>
+              <h3 className="text-red-600 text-3xl md:text-4xl text-left font-title ">6+</h3>
+              <p className="text-xs md:text-sm text-white text-left">Fitness Programs</p>
             </div>
 
             <div>
-              <h3 className="text-red-600 text-4xl text-left font-title ">4</h3>
-              <p className="text-sm text-white">World-class facilities</p>
+              <h3 className="text-red-600 text-3xl md:text-4xl text-left font-title ">4</h3>
+              <p className="text-xs md:text-sm text-white text-left">World-class facilities</p>
             </div>
 
             <div>
-              <h3 className="text-red-600 text-4xl text-left font-title ">100%</h3>
-              <p className="text-sm text-white">Committed to you</p>
+              <h3 className="text-red-600 text-3xl md:text-4xl text-left font-title ">100%</h3>
+              <p className="text-xs md:text-sm text-white text-left">Committed to you</p>
             </div>
           </div>
         </div>
 
         {/* RIGHT CONTENT */}
-        <div className="border border-red-900/30 p-8 md:p-10 bg-black/40 backdrop-blur-sm">
+        <div className="border border-red-900/30 p-6 md:p-10 bg-black/40 backdrop-blur-sm">
           
           <div className="flex items-center gap-2">
           <span className="w-6 h-[1px] bg-red-500 shrink-0" />
@@ -53,7 +53,7 @@ export default function WhoWeAre() {
         </div>
 
           {/* Heading */}
-          <h2 className="text-3xl md:text-6xl font-normal leading-tight font-title">
+          <h2 className="text-5xl md:text-6xl font-normal leading-tight font-title">
             BUILT FOR THE <br />
             <span className="text-red-600">SERIOUS YOU</span>
           </h2>

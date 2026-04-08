@@ -1,21 +1,26 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Icon from "./ui/Icon";
 
 const facilities = [
   {
+    icon: 'gym',
     title: "GYM (INDOOR & OUTDOOR)",
     desc: "State-of-the-art equipment for strength training, cardio, and functional fitness. Our indoor facility is air-conditioned and outdoor spaces offer fresh-air training experiences.",
   },
   {
+    icon: "spa",
     title: "SPA",
     desc: "Recovery is part of the process. Unwind in our full-service spa designed to soothe sore muscles, reduce stress, and restore your body after intense training sessions or long weeks.",
   },
   {
+    icon: 'swimming',
     title: "SWIMMING POOL",
     desc: "Cool down, train, or relax in our modern swimming pool. Ideal for low-impact training, cooling off post-workout, or simply enjoying a peaceful swim at your own pace.",
   },
   {
+    icon: 'football',
     title: "5-ASIDE PITCH",
     desc: "Top-quality turf for team games, group training, or competitive 5-a-side matches. A perfect way to stay active with friends, colleagues, or family.",
   },
@@ -32,15 +37,15 @@ export default function Facilities() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-            <div className="flex items-center gap-3">
-          <span className="w-8 h-[1px] bg-red-500 shrink-0" />
+            <div className="flex items-center gap-2">
+          <span className="w-6 h-[1px] bg-red-500 shrink-0" />
 
           <p className="text-red-500 uppercase tracking-widest text-sm leading-none">
             OUR SPACES
           </p>
         </div>
 
-          <h2 className="text-4xl md:text-6xl font-normal font-title leading-tight">
+          <h2 className="text-5xl md:text-6xl font-normal font-title leading-tight">
             WORLD-CLASS <span className="text-primary">PROGRAMS</span>
           </h2>
 
@@ -62,7 +67,9 @@ export default function Facilities() {
             >
               {/* Top Left Accent */}
               <div className="absolute top-4 left-4 w-3 h-3 border-l-2 border-t-2 border-red-600"></div>
-
+               <div className="py-3">
+                <Icon type={item.icon} />
+               </div>
               {/* Title */}
               <h3 className="text-2xl font-normal font-title mb-4 tracking-wide">
                 {item.title}
