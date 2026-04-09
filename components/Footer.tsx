@@ -1,5 +1,5 @@
 
-import Icon from "./ui/Icon";
+import Logo from "./ui/Logo";
 
 const Footer = () => {
   return (
@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="py-4  flex flex-col gap-8 md:flex-row justify-between md:items-center ">
           {/* LOGO */}
           <div>
-            <Icon type='logo' />
+            <Logo/>
           </div>
 
           {/* DESKTOP MENU */}

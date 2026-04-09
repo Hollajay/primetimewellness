@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Icon from "../ui/Icon";
+import Logo from "../ui/Logo";
 
 const Nav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -48,7 +49,7 @@ const Nav = () => {
             <div className="px-6 md:px-16 py-4 flex justify-between items-center">
               {/* LOGO */}
               <div>
-                <Icon type={"logo"} />
+                <Logo/>
               </div>
 
               {/* DESKTOP MENU */}
