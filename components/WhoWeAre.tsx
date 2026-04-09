@@ -1,11 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 export default function WhoWeAre() {
   // 🔹 Animation Variants
-  const container = {
+  const container: Variants = {
     hidden: {},
     show: {
       transition: {
@@ -14,30 +14,30 @@ export default function WhoWeAre() {
     },
   };
 
-  const fadeUp = {
+  const fadeUp: Variants = {
     hidden: { opacity: 0, y: 40 },
     show: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
+      transition: { duration: 0.6, ease: "easeOut" as const },
     },
   };
 
-  const fadeLeft = {
+  const fadeLeft: Variants = {
     hidden: { opacity: 0, x: -60 },
     show: {
       opacity: 1,
       x: 0,
-      transition: { duration: 0.7, ease: "easeOut" },
+      transition: { duration: 0.7, ease: "easeOut" as const },
     },
   };
 
-  const fadeRight = {
+  const fadeRight: Variants = {
     hidden: { opacity: 0, x: 60 },
     show: {
       opacity: 1,
       x: 0,
-      transition: { duration: 0.7, ease: "easeOut" },
+      transition: { duration: 0.7, ease: "easeOut" as const },
     },
   };
 
@@ -50,11 +50,9 @@ export default function WhoWeAre() {
         viewport={{ once: true, amount: 0.2 }}
         className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center"
       >
-        
         {/* LEFT IMAGE */}
         <motion.div variants={fadeLeft} className="relative group">
           <div className="relative overflow-hidden border border-red-900/30">
-            
             <motion.div
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.6 }}
@@ -82,11 +80,7 @@ export default function WhoWeAre() {
               { num: "4", text: "World-class facilities" },
               { num: "100%", text: "Committed to you" },
             ].map((item, i) => (
-              <motion.div
-                key={i}
-                variants={fadeUp}
-                className="text-left"
-              >
+              <motion.div key={i} variants={fadeUp} className="text-left">
                 <h3 className="text-red-600 text-3xl md:text-4xl font-title">
                   {item.num}
                 </h3>
@@ -125,7 +119,7 @@ export default function WhoWeAre() {
             variants={fadeUp}
             className="mt-6 text-gray-400 text-sm leading-relaxed"
           >
-            Primetime Wellness is more than a gym — it's Ibadan’s most complete
+            Primetime Wellness is more than a gym it's Ibadan’s most complete
             wellness destination. We built this space for people who are serious
             about transformation: physically, mentally, and socially.
           </motion.p>
@@ -134,7 +128,7 @@ export default function WhoWeAre() {
             variants={fadeUp}
             className="mt-4 text-gray-400 text-sm leading-relaxed"
           >
-            Whether you're here to lift heavy, find your inner calm, cool off in
+            Whether you are here to lift heavy, find your inner calm, cool off in
             the pool, or dominate on the pitch — we have everything you need.
             Our expert trainers, state-of-the-art equipment, and warm community
             make every visit count.
