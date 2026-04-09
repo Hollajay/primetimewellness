@@ -11,10 +11,11 @@ export default function PreSignupSection() {
         {/* LEFT IMAGE */}
         <div className="relative h-[500px] w-full overflow-hidden">
           <Image
+           width={1000}
+           height={1000}
             src="/img/membership.jpg"
             alt="Gym"
-            fill
-            className="object-cover"
+            className="object-cover w-full h-full"
           />
           <div className="absolute inset-0 bg-black/40" />
         </div>
