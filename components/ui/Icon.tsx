@@ -8,8 +8,6 @@ interface IconProps {
 
 type SingleIcon = Omit<IconProps, "type">;
 
-
-
 const FootballIcon = () => {
   return (
     <svg
@@ -198,6 +196,45 @@ const Whatsapp = () => {
     </svg>
   );
 };
+const LeftAngle = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+    >
+      <path
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="m15 19l-7-7l7-7"
+      />
+    </svg>
+  );
+};
+
+const RightAngle = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+    >
+      <path
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="m9 5l7 7l-7 7"
+      />
+    </svg>
+  );
+};
 
 const Icon = ({ type, color, width, height, fill }: IconProps) => {
   switch (type) {
@@ -223,6 +260,10 @@ const Icon = ({ type, color, width, height, fill }: IconProps) => {
       return <XIcon />;
     case "whatsapp":
       return <Whatsapp />;
+    case "leftangle":
+      return <LeftAngle />
+    case "rightangle":
+      return <RightAngle />
   }
 };
 

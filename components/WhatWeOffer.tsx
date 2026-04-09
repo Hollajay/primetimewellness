@@ -8,6 +8,7 @@ import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import Icon from "./ui/Icon";
 
 const programs = [
   {
@@ -78,12 +79,12 @@ export default function OurPrograms() {
 
       {/* LEFT ARROW */}
       <div className="swiper-button-prev-custom absolute left-3 top-1/2 z-10 -translate-y-1/2 rounded-full bg-deepprimary animate-pulse hover:bg-red-600 text-white p-3 cursor-pointer transition">
-        <FiChevronLeft size={20} />
+         <Icon type="leftangle" />
       </div>
 
       {/* RIGHT ARROW */}
       <div className="swiper-button-next-custom absolute right-3 top-1/2 z-10 -translate-y-1/2 rounded-full bg-deepprimary animate-pulse hover:bg-red-600 text-white p-3 cursor-pointer transition">
-        <FiChevronRight size={20} />
+        <Icon type="rightangle" />
       </div>
 
       <Swiper
