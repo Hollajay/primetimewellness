@@ -4,8 +4,10 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
+import "swiper/css/navigation";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 const programs = [
   {
@@ -72,24 +74,39 @@ export default function OurPrograms() {
 
       {/* MOBILE */}
       {isMobile ? (
-        <div className="px-4">
-          <Swiper
-            modules={[Autoplay]}
-            loop
-            spaceBetween={20}
-            autoplay={{ delay: 3000 }}
-            breakpoints={{
-              320: { slidesPerView: 1.1 },
-              640: { slidesPerView: 2 },
-            }}
-          >
-            {programs.map((item, i) => (
-              <SwiperSlide key={i}>
-                <MobileCard item={item} />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
+        <div className="relative w-full">
+
+      {/* LEFT ARROW */}
+      <div className="swiper-button-prev-custom absolute left-3 top-1/2 z-10 -translate-y-1/2 rounded-full bg-deepprimary animate-pulse hover:bg-red-600 text-white p-3 cursor-pointer transition">
+        <FiChevronLeft size={20} />
+      </div>
+
+      {/* RIGHT ARROW */}
+      <div className="swiper-button-next-custom absolute right-3 top-1/2 z-10 -translate-y-1/2 rounded-full bg-deepprimary animate-pulse hover:bg-red-600 text-white p-3 cursor-pointer transition">
+        <FiChevronRight size={20} />
+      </div>
+
+      <Swiper
+        modules={[Autoplay, Navigation]}
+        loop
+        spaceBetween={20}
+        autoplay={{ delay: 3000 }}
+        navigation={{
+          nextEl: ".swiper-button-next-custom",
+          prevEl: ".swiper-button-prev-custom",
+        }}
+        breakpoints={{
+          320: { slidesPerView: 1.1 },
+          640: { slidesPerView: 2 },
+        }}
+      >
+        {programs.map((item, i) => (
+          <SwiperSlide key={i}>
+            <MobileCard item={item} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
       ) : (
         <DesktopLayout />
       )}

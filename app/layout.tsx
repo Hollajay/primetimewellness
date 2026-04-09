@@ -20,7 +20,7 @@ const barlow = Barlow({
 
 export const metadata: Metadata = {
   title: "PrimeTime Wellness",
-  description: "Ibadan premium wellness center",
+  description: "PrimeTime Wellness is Ibadan's premium wellness center featuring a fully equipped gym, luxury spa, swimming facilities, and football training programs designed for total health and fitness transformation.",
 };
 
 export default function RootLayout({

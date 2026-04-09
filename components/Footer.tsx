@@ -1,4 +1,5 @@
-import Image from "next/image";
+
+import Icon from "./ui/Icon";
 
 const Footer = () => {
   return (
@@ -7,13 +8,7 @@ const Footer = () => {
         <div className="py-4  flex flex-col gap-8 md:flex-row justify-between md:items-center ">
           {/* LOGO */}
           <div>
-            <Image
-              className="object-fit"
-              width={73}
-              height={67}
-              src={"/logo.png"}
-              alt="primetime logo"
-            />
+            <Icon type='logo' />
           </div>
 
           {/* DESKTOP MENU */}

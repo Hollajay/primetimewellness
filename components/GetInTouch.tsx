@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaPhone, FaMailBulk, FaInstagram } from "react-icons/fa";
 import CustomSelect from "./ui/CustomSelect";
+import Icon from "./ui/Icon";
 
 export default function GetInTouch() {
   return (
@@ -34,7 +34,7 @@ export default function GetInTouch() {
           <div className="mt-8 space-y-4">
             {/* WhatsApp */}
             <div className="border border-red-900/40 p-5 flex items-center gap-4 bg-[#0a0a0a]">
-              <FaPhone className="text-red-600" size={18} />
+              <Icon type="phone" />
               <div>
                 <p className="text-lg text-primary font-light font-title">
                   PHONE/WHATSAPP
@@ -46,7 +46,7 @@ export default function GetInTouch() {
 
             {/* Email */}
             <div className="border border-red-900/40 p-5 flex items-center gap-4 bg-[#0a0a0a]">
-              <FaMailBulk className="text-red-600" size={18} />
+              <Icon type="mail" />
               <div>
                 <p className="text-lg font-title font-normal text-primary">
                   EMAIL
@@ -59,7 +59,7 @@ export default function GetInTouch() {
 
             {/* Instagram */}
             <div className="border border-red-900/40 p-5 flex items-center gap-4 bg-[#0a0a0a]">
-              <FaInstagram className="text-red-600" size={18} />
+              <Icon type="instagram" />
               <div>
                 <p className="text-lg text-primary font-title font-extralight">
                   INSTAGRAM
@@ -70,8 +70,8 @@ export default function GetInTouch() {
           </div>
 
           {/* WhatsApp Button */}
-          <button className="mt-6 bg-green-600 hover:bg-green-700 px-6 py-3 text-sm font-semibold transition">
-            Message us on WhatsApp
+          <button className="mt-6 flex flex-row gap-2 items-center justify-center bg-green-600 hover:bg-green-700 px-6 py-4 text-lg font-semibold transition">
+        <span> <Icon type="whatsapp" /> </span>  Message us on WhatsApp
           </button>
         </motion.div>
 
