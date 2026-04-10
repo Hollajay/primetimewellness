@@ -84,9 +84,7 @@ export default function WhoWeAre() {
                 <h3 className="text-red-600 text-3xl md:text-4xl font-title">
                   {item.num}
                 </h3>
-                <p className="text-xs md:text-sm text-white">
-                  {item.text}
-                </p>
+                <p className="text-xs md:text-sm text-white">{item.text}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -128,8 +126,8 @@ export default function WhoWeAre() {
             variants={fadeUp}
             className="mt-4 text-gray-400 text-sm leading-relaxed"
           >
-            Whether you are here to lift heavy, find your inner calm, cool off in
-            the pool, or dominate on the pitch — we have everything you need.
+            Whether you are here to lift heavy, find your inner calm, cool off
+            in the pool, or dominate on the pitch — we have everything you need.
             Our expert trainers, state-of-the-art equipment, and warm community
             make every visit count.
           </motion.p>
@@ -158,15 +156,21 @@ export default function WhoWeAre() {
             ))}
           </motion.div>
 
-          {/* CTA */}
-          <motion.button
+         <div className="mt-10">
+            <motion.a
             variants={fadeUp}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="mt-10 bg-red-600 hover:bg-red-700 px-6 py-3 text-sm font-semibold transition"
+            href="https://wa.me/2348149776078?text=Hi%20I%27m%20interested%20in%20joining%20the%20gym"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-red-600 hover:bg-red-700 px-6 py-3 font-semibold transition text-center"
           >
-            Start Your Journey
-          </motion.button>
+           Start Your Journey
+          </motion.a>
+         </div>
+          
+
         </motion.div>
       </motion.div>
     </section>

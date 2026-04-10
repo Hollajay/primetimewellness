@@ -4,12 +4,12 @@ import { FaAngleDown } from "react-icons/fa";
 
 const options = ["Gym", "Spa", "Swimming", "Football"];
 
-export default function CustomSelect() {
+export default function CustomSelect({ value, onChange }: any) {
   const [open, setOpen] = useState(false);
-  const [selected, setSelected] = useState("Select a Program or Facility");
 
   return (
     <div className="w-full relative font-main">
+      
       {/* Label */}
       <label className="block text-lg font-extralight mb-2 text-white">
         Program / Facility
@@ -18,9 +18,12 @@ export default function CustomSelect() {
       {/* Select Box */}
       <div
         onClick={() => setOpen(!open)}
-        className="w-full bg-inputbg px-4 py-3 flex justify-between items-center cursor-pointer border-white border-[1px] "
+        className="w-full bg-inputbg px-4 py-3 flex justify-between items-center cursor-pointer border-white border"
       >
-        <span className="text-lg font-extralight">{selected}</span>
+        <span className="text-lg font-extralight">
+          {value || "Select a Program or Facility"}
+        </span>
+
         <FaAngleDown
           className={`transition ${open ? "rotate-180" : ""}`}
           size={18}
@@ -34,10 +37,15 @@ export default function CustomSelect() {
             <div
               key={index}
               onClick={() => {
-                setSelected(item);
+                onChange(item); // ✅ send value to form
                 setOpen(false);
               }}
-              className="px-4 py-3 text-lg  hover:bg-red-700 cursor-pointer transition"
+              className={`px-4 py-3 text-lg cursor-pointer transition
+                ${
+                  value === item
+                    ? "bg-red-600 text-white"
+                    : "hover:bg-red-700"
+                }`}
             >
               {item}
             </div>

@@ -67,9 +67,17 @@ const Nav = () => {
                   Membership
                 </a>
 
-                <button className="bg-red-600 px-5 py-2 hover:bg-red-700 transition">
-                  Join Now
-                </button>
+                
+            <div className="">
+            <a
+            href="https://wa.me/2348149776078?text=Hi%20I%27m%20interested%20in%20joining%20the%20gym"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-red-600 hover:bg-red-700 px-6 py-3 font-semibold transition text-center"
+          >
+           Join Now
+          </a>
+         </div>
               </div>
 
               {/* MOBILE MENU BUTTON */}
@@ -107,8 +115,18 @@ const Nav = () => {
               <a href="#">Membership</a>
             </nav>
 
-            {/* CTA */}
-            <button className="mt-8 bg-red-600 px-5 py-3">Join Now</button>
+           
+
+            <div className="mt-10">
+            <a
+            href="https://wa.me/2348149776078?text=Hi%20I%27m%20interested%20in%20joining%20the%20gym"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-red-600 hover:bg-red-700 px-6 py-3 font-semibold transition text-center"
+          >
+           Join Now
+          </a>
+         </div>
           </motion.div>
         )}
       </AnimatePresence>

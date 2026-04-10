@@ -44,6 +44,10 @@ const programs = [
 ];
 
 export default function OurPrograms() {
+  const phone = "2348149776078";
+const createWhatsAppLink = (message: string) => {
+  return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+};
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -111,10 +115,14 @@ export default function OurPrograms() {
       ) : (
         <DesktopLayout />
       )}
-      <div className="flex items-center justify-center mt-6">
-        <button className="w-auto bg-red-600 hover:bg-deepprimary px-6 py-4 font-main font-semibold transition">
-          Ask About Classes
-        </button>
+      <div className="flex items-center justify-center mt-10">
+         <a
+            href={createWhatsAppLink("Hello, I'm interested in learning more about the fitness programs offered at Primetime Wellness. Could you please provide more information on available classes and schedules?")}
+            target="_blank"
+            className="w-auto bg-red-600 hover:bg-deepprimary px-6 py-4 font-main font-semibold transition"
+          >
+           Ask About Classes
+          </a>
       </div>
     </section>
   );

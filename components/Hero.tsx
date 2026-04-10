@@ -11,6 +11,10 @@ const images = [
 ];
 
 export default function Hero() {
+const phone = "2348149776078";
+const createWhatsAppLink = (message: string) => {
+  return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+};
   const [index, setIndex] = useState(0);
 
   // Auto slide
@@ -65,26 +69,39 @@ export default function Hero() {
           </span>
         </div>
 
+        <div className="flex flex-row items-center justify-center md:justify-start mt-4 md:mt-1 gap-3">
+          <span className="w-2 h-[1px] bg-white shrink-0" />
+
+          <p className="text-white uppercase font-title leading-tight tracking-widest text-2xl leading-none">
+            AKOBO AXIS
+          </p>
+          <span className="w-2 h-[1px] bg-white shrink-0" />
+        </div>
+
+         
         {/* Description */}
         <p className="mt-6 max-w-xl text-gray-300 text-sm md:text-base font-main font-normal">
-          Train hard. Recover well. Live fully. Primetime Wellness is Ibadan’s
+          Train hard. Recover well. Live fully. Primetime Wellness is Ibadan's
           most complete wellness experience — gym, spa, pool, fitness classes,
           and more under one roof.
         </p>
 
         {/* Buttons */}
         <div className="flex flex-col md:flex-row gap-4 mt-8 w-full   items-center">
-          <button className="w-full md:w-auto bg-red-600 hover:bg-red-700 px-6 py-3 font-main font-semibold transition">
+          <a
+            href={createWhatsAppLink("Hello, I'm interested in Primetime Wellness services. I would like to inquire about membership options and available programs. Kindly assist me with the details.")}
+            target="_blank"
+            className="w-full md:w-auto bg-red-600 hover:bg-red-700 px-6 py-3 font-main font-semibold transition inline-block text-center"
+          >
             Book Now
-          </button>
-
+          </a>
+      
           <button className="w-full md:w-auto border border-white px-6 py-3 hover:bg-white font-semibold font-main hover:text-black transition">
             Explore Programs
           </button>
         </div>
 
         {/* Stats */}
-      
       </div>
 
       {/* Bottom Scroller */}

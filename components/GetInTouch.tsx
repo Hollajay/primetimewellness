@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import CustomSelect from "./ui/CustomSelect";
 import Icon from "./ui/Icon";
+import ContactForm from "./Form";
 
 export default function GetInTouch() {
   return (
@@ -39,8 +40,8 @@ export default function GetInTouch() {
                 <p className="text-lg text-primary font-light font-title">
                   PHONE/WHATSAPP
                 </p>
-                <p className="text-sm font-normal">0803 706 0002</p>
-                <p className="text-sm font-normal">0814 000 3050</p>
+                <p className="text-sm font-normal">09116718650</p>
+                <p className="text-sm font-normal">09068457729</p>
               </div>
             </div>
 
@@ -52,7 +53,7 @@ export default function GetInTouch() {
                   EMAIL
                 </p>
                 <p className="text-sm font-normal">
-                  primetimewellness@gmail.com
+                  primetimewellnessng@gmail.com
                 </p>
               </div>
             </div>
@@ -64,15 +65,26 @@ export default function GetInTouch() {
                 <p className="text-lg text-primary font-title font-extralight">
                   INSTAGRAM
                 </p>
-                <p className="text-sm font-normal">@primetimewellness</p>
+                <p className="text-sm font-normal">@primetimewellnessng</p>
               </div>
             </div>
           </div>
 
           {/* WhatsApp Button */}
-          <button className="mt-6 flex flex-row gap-2 items-center justify-center bg-green-600 hover:bg-green-700 px-6 py-4 text-lg font-semibold transition">
-        <span> <Icon type="whatsapp" /> </span>  Message us on WhatsApp
-          </button>
+           <div className="flex items-start">
+            <a
+              href="https://wa.me/2348149776078?text=Hi%20I%27m%20interested%20in%20joining%20the%20gym"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 flex flex-row gap-2 items-center rounded justify-center bg-green-600 hover:bg-green-700 px-6 py-4 text-lg font-semibold transition"
+            >
+              <span>
+                <Icon type="whatsapp" />
+              </span>
+              Message us on WhatsApp
+            </a>
+            </div>
+          
         </motion.div>
 
         {/* RIGHT SIDE FORM */}
@@ -91,33 +103,7 @@ export default function GetInTouch() {
           </p>
 
           {/* Form */}
-          <form className="space-y-8">
-            <div className=" flex flex-col gap-2">
-              <label className="text-lg font-extralight font-title ">Full Name</label>
-              <input
-                type="text"
-                placeholder="Your Name"
-                className="w-full bg-inputbg px-4 py-3 text-lg placeholder:text-white placeholder:font-extralight  outline-none border-[1px] border-white "
-              />
-            </div>
-            <div className="flex flex-col gap-2">
-              <label htmlFor="" className="text-lg font-light">Phone / WhatsApp</label>
-              <input
-              type="text"
-              placeholder="e.g 08034567890"
-              className="w-full bg-inputbg px-4 py-3 text-lg placeholder:text-white placeholder:font-extralight outline-none border-[1px] border-white "
-            />
-            </div>
-            
-           <CustomSelect/>
-
-            <button
-              type="submit"
-              className="w-full bg-red-600 hover:bg-red-700 py-3 text-sm font-semibold transition"
-            >
-              Send Via WhatsApp
-            </button>
-          </form>
+          <ContactForm/>
         </motion.div>
       </div>
     </section>

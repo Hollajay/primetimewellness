@@ -4,6 +4,10 @@ import { FiCheckCircle } from "react-icons/fi";
 import Image from "next/image";
 
 export default function PreSignupSection() {
+   const phone = "2348149776078";
+const createWhatsAppLink = (message: string) => {
+  return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+};
   return (
     <section className="w-full bg-black py-20 px-6 md:px-12">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
@@ -68,11 +72,18 @@ export default function PreSignupSection() {
           <p className="text-xs text-white/80 mb-6">
             Offer valid till April 15th
           </p>
+          
 
-          {/* CTA */}
-          <button className="bg-black text-white px-6 py-3 text-sm font-semibold hover:bg-neutral-900 transition">
-            Register Now
-          </button>
+         
+         <a
+            href={createWhatsAppLink(" Hello, I’m interested in the Primetime Wellness introductory pre-signup offer. I would like to secure a spot and get more details on the membership plans, pricing, and next steps. Kindly assist me.")}
+            target="_blank"
+            className="bg-black text-white px-6 py-3 text-sm font-semibold hover:bg-neutral-900 transition"
+          >
+          Register Now
+          </a>
+   
+
         </div>
       </div>
     </section>
