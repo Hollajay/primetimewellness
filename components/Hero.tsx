@@ -72,7 +72,7 @@ const createWhatsAppLink = (message: string) => {
         <div className="flex flex-row items-center justify-center md:justify-start mt-4 md:mt-1 gap-3">
           <span className="w-2 h-[1px] bg-white shrink-0" />
 
-          <p className="text-white uppercase font-title leading-tight tracking-widest text-2xl leading-none">
+          <p className="text-white uppercase font-title leading-tight tracking-widest text-2xl ">
             AKOBO AXIS
           </p>
           <span className="w-2 h-[1px] bg-white shrink-0" />

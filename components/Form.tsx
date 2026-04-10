@@ -12,7 +12,7 @@ export default function ContactForm() {
 
   const phoneNumber = "2348012345678";
 
-  const handleChange = (e) => {
+  const handleChange = (e: any) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
