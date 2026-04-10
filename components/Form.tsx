@@ -10,7 +10,7 @@ export default function ContactForm() {
     program: "",
   });
 
-  const phoneNumber = "2348012345678";
+  const phoneNumber = "2348149776078";
 
   const handleChange = (e: any) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -41,7 +41,7 @@ Kindly assist me with the next steps.
       
       {/* Name */}
       <div className="flex flex-col gap-2">
-        <label className="text-lg font-extralight font-title">
+        <label className="text-lg font-light ">
           Full Name
         </label>
         <input
