@@ -9,7 +9,7 @@ export default function WhoWeAre() {
     hidden: {},
     show: {
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.3,
       },
     },
   };
@@ -19,7 +19,7 @@ export default function WhoWeAre() {
     show: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" as const },
+      transition: { duration: 0.8},
     },
   };
 
@@ -28,7 +28,7 @@ export default function WhoWeAre() {
     show: {
       opacity: 1,
       x: 0,
-      transition: { duration: 0.7, ease: "easeOut" as const },
+      transition: { duration: 0.8},
     },
   };
 
@@ -37,7 +37,7 @@ export default function WhoWeAre() {
     show: {
       opacity: 1,
       x: 0,
-      transition: { duration: 0.7, ease: "easeOut" as const },
+      transition: { duration: 0.7},
     },
   };
 
@@ -117,7 +117,7 @@ export default function WhoWeAre() {
             variants={fadeUp}
             className="mt-6 text-gray-400 text-sm leading-relaxed"
           >
-            Primetime Wellness is more than a gym it's Ibadan’s most complete
+            Primetime Wellness is more than a gym it&apos;s Ibadan&apos;s most complete
             wellness destination. We built this space for people who are serious
             about transformation: physically, mentally, and socially.
           </motion.p>
@@ -127,7 +127,7 @@ export default function WhoWeAre() {
             className="mt-4 text-gray-400 text-sm leading-relaxed"
           >
             Whether you are here to lift heavy, find your inner calm, cool off
-            in the pool, or dominate on the pitch — we have everything you need.
+            in the pool, or dominate on the pitch, we have everything you need.
             Our expert trainers, state-of-the-art equipment, and warm community
             make every visit count.
           </motion.p>

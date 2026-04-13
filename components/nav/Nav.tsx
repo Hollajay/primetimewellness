@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Icon from "../ui/Icon";
-import Logo from "../ui/Logo";
+import Image from "next/image";
 
 const Nav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -49,7 +49,13 @@ const Nav = () => {
             <div className="px-6 md:px-16 py-4 flex justify-between items-center">
               {/* LOGO */}
               <div>
-                <Logo/>
+                <Image
+                  width={73}
+                  height={68}
+                  className="object-fit"
+                  src={"/logo.png"}
+                  alt="LOGO"
+                />
               </div>
 
               {/* DESKTOP MENU */}
@@ -67,17 +73,16 @@ const Nav = () => {
                   Membership
                 </a>
 
-                
-            <div className="">
-            <a
-            href="https://wa.me/2348149776078?text=Hi%20I%27m%20interested%20in%20joining%20the%20gym"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-red-600 hover:bg-red-700 px-6 py-3 font-semibold transition text-center"
-          >
-           Join Now
-          </a>
-         </div>
+                <div className="">
+                  <a
+                    href="https://wa.me/2348149776078?text=Hi%20I%27m%20interested%20in%20joining%20the%20gym"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-red-600 hover:bg-red-700 px-6 py-3 font-semibold transition text-center"
+                  >
+                    Join Now
+                  </a>
+                </div>
               </div>
 
               {/* MOBILE MENU BUTTON */}
@@ -102,7 +107,10 @@ const Nav = () => {
             className="fixed top-0 right-0 w-[75%] h-full bg-black text-white p-6 z-50"
           >
             {/* CLOSE */}
-            <div className="flex justify-end mb-6" onClick={() => setMenuOpen(false)} >
+            <div
+              className="flex justify-end mb-6"
+              onClick={() => setMenuOpen(false)}
+            >
               <Icon type="xicon" />
             </div>
 
@@ -115,18 +123,16 @@ const Nav = () => {
               <a href="#">Membership</a>
             </nav>
 
-           
-
             <div className="mt-10">
-            <a
-            href="https://wa.me/2348149776078?text=Hi%20I%27m%20interested%20in%20joining%20the%20gym"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-red-600 hover:bg-red-700 px-6 py-3 font-semibold transition text-center"
-          >
-           Join Now
-          </a>
-         </div>
+              <a
+                href="https://wa.me/2348149776078?text=Hi%20I%27m%20interested%20in%20joining%20the%20gym"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-red-600 hover:bg-red-700 px-6 py-3 font-semibold transition text-center"
+              >
+                Join Now
+              </a>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

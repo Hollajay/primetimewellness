@@ -7,7 +7,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import Icon from "./ui/Icon";
 
 const programs = [

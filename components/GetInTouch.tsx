@@ -86,6 +86,7 @@ export default function GetInTouch() {
             </div>
           
         </motion.div>
+            
 
         {/* RIGHT SIDE FORM */}
         <motion.div

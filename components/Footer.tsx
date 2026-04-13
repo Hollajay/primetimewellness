@@ -1,6 +1,4 @@
-
 import Image from "next/image";
-import Logo from "./ui/Logo";
 
 const Footer = () => {
   return (
@@ -9,7 +7,13 @@ const Footer = () => {
         <div className="py-4  flex flex-col gap-8 md:flex-row justify-between md:items-center ">
           {/* LOGO */}
           <div>
-            <Logo/>
+            <Image
+              width={73}
+              height={68}
+              className="0bject-fit"
+              src={"/logo.png"}
+              alt="logo"
+            />
           </div>
 
           {/* DESKTOP MENU */}
@@ -33,16 +37,22 @@ const Footer = () => {
         </div>
 
         <p className="md:text-center text-left text-white font-light mt-3">
-          © 2025 Primetime Wellness, Akobo Axis. All rights reserved. · Ibadan, Oyo State,
-          Nigeria
+          © 2025 Primetime Wellness, Akobo Axis. All rights reserved. · Ibadan,
+          Oyo State, Nigeria
         </p>
       </div>
 
-       <div className="fixed right-6 bottom-6 md:right-28 md:bottom-28 animate-bounce z-100">
-         <a href="">
-          <Image width={50} height={50} className="object-fit w-14 h-14 md:w-20 md:h-20" src={'/img/whatsapp.png'} alt={'whatsapp logo'} />
-         </a>
-       </div>
+      <div className="fixed right-6 bottom-6 md:right-28 md:bottom-28 animate-bounce z-100">
+        <a href="">
+          <Image
+            width={50}
+            height={50}
+            className="object-fit w-14 h-14 md:w-20 md:h-20"
+            src={"/img/whatsapp.png"}
+            alt={"whatsapp logo"}
+          />
+        </a>
+      </div>
     </div>
   );
 };
