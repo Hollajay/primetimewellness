@@ -78,9 +78,9 @@ export default function PreSignupSection() {
           </div>
 
           {/* VALIDITY */}
-          <p className="text-xs text-white/80 mb-6">
+          {/* <p className="text-xs text-white/80 mb-6">
             Offer valid till April 15th
-          </p>
+          </p> */}
 
           <a
             href={createWhatsAppLink(
