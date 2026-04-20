@@ -18,19 +18,19 @@ const Footer = () => {
 
           {/* DESKTOP MENU */}
           <nav className="flex md:flex-row flex-col  gap-8 text-white font-light">
-            <a href="#" className="hover:text-primary transition">
-              About
-            </a>
-            <a href="#" className="hover:text-primary transition">
-              Programs
-            </a>
-            <a href="#" className="hover:text-primary transition">
-              Facilities
-            </a>
-            <a href="#" className="hover:text-primary transition">
-              Membership
-            </a>
-            <a href="#" className="hover:text-primary transition">
+              <a href="#about" className="hover:text-red-500 transition">
+                  About
+                </a>
+                <a href="#programs" className="hover:text-red-500 transition">
+                  Programs
+                </a>
+                <a href="#facilities" className="hover:text-red-500 transition">
+                  Facilities
+                </a>
+                <a href="#membership" className="hover:text-red-500 transition">
+                  Membership
+                </a>
+               <a href="#" className="hover:text-primary transition">
               Instagram
             </a>
           </nav>

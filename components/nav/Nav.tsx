@@ -60,22 +60,22 @@ const Nav = () => {
 
               {/* DESKTOP MENU */}
               <div className="hidden md:flex items-center gap-8 text-white font-medium">
-                <a href="#" className="hover:text-red-500 transition">
+                <a href="#about" className="hover:text-red-500 transition">
                   About
                 </a>
-                <a href="#" className="hover:text-red-500 transition">
+                <a href="#programs" className="hover:text-red-500 transition">
                   Programs
                 </a>
-                <a href="#" className="hover:text-red-500 transition">
+                <a href="#facilities" className="hover:text-red-500 transition">
                   Facilities
                 </a>
-                <a href="#" className="hover:text-red-500 transition">
+                <a href="#membership" className="hover:text-red-500 transition">
                   Membership
                 </a>
 
                 <div className="">
                   <a
-                    href="https://wa.me/2348149776078?text=Hi%20I%27m%20interested%20in%20joining%20the%20gym"
+                    href="https://wa.me/2349068457729?text=Hi%20I%27m%20interested%20in%20joining%20the%20gym"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-red-600 hover:bg-red-700 px-6 py-3 font-semibold transition text-center"
@@ -116,16 +116,24 @@ const Nav = () => {
 
             {/* MENU ITEMS */}
             <nav className="flex flex-col gap-6 text-lg">
-              <a href="#">Home</a>
-              <a href="#">About</a>
-              <a href="#">Programs</a>
-              <a href="#">Facilities</a>
-              <a href="#">Membership</a>
+              <a href="/home">Home</a>
+              <a href="#about" onClick={() => setMenuOpen(false)} className="hover:text-red-500 transition">
+                  About
+                </a>
+                <a href="#programs" onClick={() => setMenuOpen(false)} className="hover:text-red-500 transition">
+                  Programs
+                </a>
+                <a href="#facilities" onClick={() => setMenuOpen(false)} className="hover:text-red-500 transition">
+                  Facilities
+                </a>
+                <a href="#membership" onClick={() => setMenuOpen(false)} className="hover:text-red-500 transition">
+                  Membership
+                </a>
             </nav>
 
             <div className="mt-10">
               <a
-                href="https://wa.me/2348149776078?text=Hi%20I%27m%20interested%20in%20joining%20the%20gym"
+                href="https://wa.me/2349068457729?text=Hi%20I%27m%20interested%20in%20joining%20the%20gym"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-red-600 hover:bg-red-700 px-6 py-3 font-semibold transition text-center"

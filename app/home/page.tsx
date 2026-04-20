@@ -11,15 +11,13 @@ import React from 'react'
 const HomePage = () => {
   return (
     <div>
-        <Hero/>
-        <Marquee/>
-        <WhoWeAre/>
-        <OurPrograms/>
-        <Facilities/>
-        <PreSignupSection/>
-        <GetInTouch/>
-        <Footer/>
-    </div>
+  <section id="home"><Hero/></section>
+  <section id="about"><WhoWeAre/></section>
+  <section id="programs"><OurPrograms/></section>
+  <section id="facilities"><Facilities/></section>
+  <section id="membership"><PreSignupSection/></section>
+  <section id="contact"><GetInTouch/></section>
+</div>
   )
 }
 

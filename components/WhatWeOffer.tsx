@@ -153,8 +153,6 @@ function DesktopLayout() {
                   className="w-full h-full object-cover "
                 />
               </div>
-
-              {/* Text */}
               <div
                 className={`w-1/2 flex flex-col justify-center p-6 ${
                   hasRedBg

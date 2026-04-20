@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Nav from "@/components/nav/Nav";
 import { Bebas_Neue, Barlow } from "next/font/google";
+import Footer from "@/components/Footer";
 
 const bebas = Bebas_Neue({
 
@@ -36,6 +37,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <Nav/>
         {children}
+        <Footer/>
         </body>
     </html>
   );
