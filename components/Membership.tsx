@@ -17,15 +17,24 @@ export default function PreSignupSection() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="relative h-[500px] w-full overflow-hidden"
+          className="relative h-[600px] w-full overflow-hidden"
         >
-          <Image
+          {/* <Image
             width={1000}
             height={1000}
             src="/img/membership.jpg"
             alt="Gym"
             className="object-cover w-full h-full"
-          />
+          /> */}
+          <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline
+          className="object-cover w-full h-full"
+          >
+            <source src="/video/primetime3.mp4" type="video/mp4" />
+          </video>
           <div className="absolute inset-0 bg-black/40" />
         </motion.div>
 

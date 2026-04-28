@@ -3,11 +3,11 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 
-const images = [
+const slides = [
   "/img/hero3.jpg",
   "/img/hero2.jpg",
   "/img/hero1.jpg",
-  "https://images.unsplash.com/photo-1560090995-01632a28895b",
+  "/video/prime time.mp4",
 ];
 
 export default function Hero() {
@@ -20,7 +20,7 @@ export default function Hero() {
   // Auto slide
   useEffect(() => {
     const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % images.length);
+      setIndex((prev) => (prev + 1) % slides.length);
     }, 5000);
     return () => clearInterval(interval);
   }, []);
@@ -28,7 +28,8 @@ export default function Hero() {
   return (
     <section className="relative h-[90vh] w-full overflow-hidden text-white">
       {/* Background Image Slider */}
-      <AnimatePresence mode="wait">
+
+      {/* <AnimatePresence >
         <motion.div
           key={index}
           className="absolute inset-0 bg-cover bg-center"
@@ -38,7 +39,36 @@ export default function Hero() {
           exit={{ opacity: 0 }}
           transition={{ duration: 1.2 }}
         />
-      </AnimatePresence>
+      </AnimatePresence> */}
+
+        {slides.map((slide, i) => (
+        <div
+          key={i}
+          className={`absolute inset-0 transition-opacity duration-[2000ms] ${
+            i === index ? "opacity-100 z-20" : "opacity-0 z-10"
+          }`}
+        >
+          {/* VIDEO */}
+          {slide.type === "video" ? (
+            <video
+              className="w-full h-full object-cover"
+              autoPlay
+              muted
+              loop
+              playsInline
+            >
+              <source src={slide.src} type="video/mp4" />
+            </video>
+          ) : (
+            /* IMAGE */
+            <img
+              src={slide.src}
+              alt="hero"
+              className="w-full h-full object-cover scale-110 animate-[zoom_10s_linear_infinite]"
+            />
+          )}
+        </div>
+      ))}
 
       {/* Dark Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-black via-[#1a0000]/80 to-transparent z-10" />
