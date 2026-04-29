@@ -1,13 +1,13 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
+import Marquee from "./ui/Marquee";
 
 const slides = [
-  "/img/hero3.jpg",
-  "/img/hero2.jpg",
-  "/img/hero1.jpg",
-  "/video/prime time.mp4",
+  { type: "image", src: "/img/hero3.jpg" },
+  { type: "image", src: "/img/hero2.jpg" },
+  { type: "image", src: "/img/hero1.jpg" },
+  { type: "video", src: "/video/primetime2.MOV" },
 ];
 
 export default function Hero() {
@@ -26,7 +26,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative h-[90vh] w-full overflow-hidden text-white">
+    <section className="relative h-[100vh] w-full overflow-hidden text-white">
       {/* Background Image Slider */}
 
       {/* <AnimatePresence >
@@ -40,7 +40,7 @@ export default function Hero() {
           transition={{ duration: 1.2 }}
         />
       </AnimatePresence> */}
-
+    
         {slides.map((slide, i) => (
         <div
           key={i}
@@ -71,13 +71,13 @@ export default function Hero() {
       ))}
 
       {/* Dark Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black via-[#1a0000]/80 to-transparent z-10" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black via-[#1a0000]/80 to-transparent z-20" />
 
       {/* Extra Red Glow */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#ff0000]/10 to-black z-10" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#ff0000]/10 to-black z-20" />
 
       {/* Content */}
-      <div className="relative z-20 max-w-7xl mx-auto px-6 h-full flex flex-col justify-center items-left">
+      <div className="relative z-40 max-w-7xl mx-auto px-6 h-full flex flex-col justify-center items-left">
         <div className="flex flex-col md:flex-row items-center gap-3">
           <span className="w-8 h-[1px] bg-red-500 shrink-0" />
 
@@ -140,6 +140,7 @@ export default function Hero() {
       </div>
 
       {/* Bottom Scroller */}
+      <Marquee/>
     </section>
   );
 }

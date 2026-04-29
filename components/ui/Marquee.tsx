@@ -30,7 +30,7 @@ const items = [
 
 export default function Marquee() {
   return (
-    <div className="absolute bottom-0 w-full bg-red-800 text-white font-bold text-[20px] py-3 overflow-hidden z-20">
+    <div className="absolute bottom-0 w-full bg-red-800 text-white font-bold text-[20px] py-3 overflow-hidden z-50">
       
       <motion.div
         className="flex gap-10 whitespace-nowrap px-6"
