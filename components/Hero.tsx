@@ -2,12 +2,13 @@
 
 import { useEffect, useState } from "react";
 import Marquee from "./ui/Marquee";
+import { AnimatePresence, motion } from "framer-motion";
 
 const slides = [
-  { type: "image", src: "/img/hero3.jpg" },
-  { type: "image", src: "/img/hero2.jpg" },
-  { type: "image", src: "/img/hero1.jpg" },
-  { type: "video", src: "/video/primetime2.MOV" },
+   "/img/image3.jpeg",
+   "/img/image1.jpeg" ,
+  "/img/image2.jpeg" ,
+  "/img/image5.jpeg",
 ];
 
 export default function Hero() {
@@ -29,49 +30,21 @@ export default function Hero() {
     <section className="relative h-[100vh] w-full overflow-hidden text-white">
       {/* Background Image Slider */}
 
-      {/* <AnimatePresence >
+      <AnimatePresence >
         <motion.div
           key={index}
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${images[index]})` }}
+          style={{ backgroundImage: `url(${slides[index]})` }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 1.2 }}
         />
-      </AnimatePresence> */}
-    
-        {slides.map((slide, i) => (
-        <div
-          key={i}
-          className={`absolute inset-0 transition-opacity duration-[2000ms] ${
-            i === index ? "opacity-100 z-20" : "opacity-0 z-10"
-          }`}
-        >
-          {/* VIDEO */}
-          {slide.type === "video" ? (
-            <video
-              className="w-full h-full object-cover"
-              autoPlay
-              muted
-              loop
-              playsInline
-            >
-              <source src={slide.src} type="video/mp4" />
-            </video>
-          ) : (
-            /* IMAGE */
-            <img
-              src={slide.src}
-              alt="hero"
-              className="w-full h-full object-cover scale-110 animate-[zoom_10s_linear_infinite]"
-            />
-          )}
-        </div>
-      ))}
+      </AnimatePresence>
+   
 
       {/* Dark Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black via-[#1a0000]/80 to-transparent z-20" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black via-[#1a0000]/60 to-transparent z-20" />
 
       {/* Extra Red Glow */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#ff0000]/10 to-black z-20" />

@@ -1,5 +1,6 @@
 import Facilities from '@/components/Facilities'
 import Footer from '@/components/Footer'
+import Gallery from '@/components/Gallery'
 import GetInTouch from '@/components/GetInTouch'
 import Hero from '@/components/Hero'
 import PreSignupSection from '@/components/Membership'
@@ -17,6 +18,7 @@ const HomePage = () => {
   <section id="facilities"><Facilities/></section>
   <section id="membership"><PreSignupSection/></section>
   <section id="contact"><GetInTouch/></section>
+  <section id="gallery"><Gallery/></section>
 </div>
   )
 }

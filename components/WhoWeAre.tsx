@@ -58,7 +58,7 @@ export default function WhoWeAre() {
               transition={{ duration: 0.6 }}
             >
               <Image
-                src="/img/whoweare.jpg"
+                src="/img/hero.jpeg"
                 alt="fitness"
                 width={600}
                 height={750}
@@ -161,7 +161,7 @@ export default function WhoWeAre() {
             variants={fadeUp}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            href="https://wa.me/2348149776078?text=Hi%20I%27m%20interested%20in%20joining%20the%20gym"
+            href="https://wa.me/2349068457729?text=Hi%20I%27m%20interested%20in%20joining%20the%20gym"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-red-600 hover:bg-red-700 px-6 py-3 font-semibold transition text-center"

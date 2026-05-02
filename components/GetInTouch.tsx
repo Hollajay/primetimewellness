@@ -73,7 +73,7 @@ export default function GetInTouch() {
           {/* WhatsApp Button */}
            <div className="flex items-start">
             <a
-              href="https://wa.me/2348149776078?text=Hi%20I%27m%20interested%20in%20joining%20the%20gym"
+              href="https://wa.me/2349068457729?text=Hi%20I%27m%20interested%20in%20joining%20the%20gym"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-6 flex flex-row gap-2 items-center rounded justify-center bg-green-600 hover:bg-green-700 px-6 py-4 text-lg font-semibold transition"

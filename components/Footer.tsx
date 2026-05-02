@@ -30,7 +30,7 @@ const Footer = () => {
                 <a href="#membership" className="hover:text-red-500 transition">
                   Membership
                 </a>
-               <a href="#" className="hover:text-primary transition">
+               <a  href="https://www.instagram.com/primetimewellnessng?igsh=ZTk0bm5tZ2NzbXJn" className="hover:text-primary transition">
               Instagram
             </a>
           </nav>
