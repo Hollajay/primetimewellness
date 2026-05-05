@@ -1,3 +1,6 @@
+"use client"
+ import { useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import Facilities from '@/components/Facilities'
 import Footer from '@/components/Footer'
 import Gallery from '@/components/Gallery'
@@ -10,6 +13,23 @@ import WhoWeAre from '@/components/WhoWeAre'
 import React from 'react'
 
 const HomePage = () => {
+ 
+
+useEffect(() => {
+  const hash = window.location.hash.replace("#", "");
+  if (!hash) return;
+
+  const el = document.getElementById(hash);
+  if (!el) return;
+
+  const yOffset = -80;
+  const y =
+    el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+  setTimeout(() => {
+    window.scrollTo({ top: y, behavior: "smooth" });
+  }, 100); // wait for render
+}, []);
   return (
     <div>
   <section id="home"><Hero/></section>

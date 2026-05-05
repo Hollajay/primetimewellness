@@ -1,37 +1,31 @@
 "use client";
 
 import { FiCheckCircle } from "react-icons/fi";
-import Image from "next/image";
 import { motion } from "framer-motion";
 
-export default function PreSignupSection() {
+export default function MembershipSection() {
   const phone = "2348149776078";
+
   const createWhatsAppLink = (message: string) => {
     return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
   };
+
   return (
     <section className="w-full bg-black py-20 px-6 md:px-12">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center justify-center">
-        {/* LEFT IMAGE */}
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+        
+        {/* LEFT VIDEO */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.1 }}
           className="relative h-[600px] w-full overflow-hidden"
         >
-          {/* <Image
-            width={1000}
-            height={1000}
-            src="/img/membership.jpg"
-            alt="Gym"
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
             className="object-cover w-full h-full"
-          /> */}
-          <video 
-          autoPlay 
-          loop 
-          muted 
-          playsInline
-          className="object-cover w-full h-full"
           >
             <source src="/video/primetime3.mp4" type="video/mp4" />
           </video>
@@ -41,36 +35,36 @@ export default function PreSignupSection() {
         {/* RIGHT CONTENT */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.1 }}
+          whileInView={{ opacity: 1, y: 0 }}
           className="bg-deepprimary p-8 md:p-10 text-white"
         >
           {/* Tag */}
-          <span className="text-xs uppercase tracking-widest bg-white/20 px-3 py-1 inline-block mb-4">
-            Limited Spot Available
+          <span className="text-xs  uppercase tracking-widest bg-red-700/70 px-3 py-1 inline-block mb-4">
+            Now Open
           </span>
 
           {/* Heading */}
           <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-4">
-            Introductory <br /> Pre-Signup Offer
+            Join PrimeTime <br /> Wellness Today
           </h2>
 
           {/* Description */}
           <p className="text-sm text-white/90 mb-6">
-            Join before we officially open and lock in exclusive founding member
-            rates. Get early access and be part of the Primetime fitness
-            community from day one.
+            PrimeTime Wellness is officially open. Step into a complete fitness
+            experience with world-class facilities, expert trainers, and a
+            supportive community built to help you reach your goals.
           </p>
 
           {/* FEATURES */}
           <div className="space-y-3 mb-6">
             {[
-              "Flexible Membership Plans",
-              "Full Access to Fitness Facilities",
-              "Professional Trainer Assistance",
+              "Fully Equipped Modern Gym",
+              "Access to Swimming Pool & Spa",
+              "Professional Trainer Guidance",
+              "Football & Outdoor Facilities",
             ].map((item, i) => (
               <div key={i} className="flex items-center gap-3">
-                <FiCheckCircle className="text-white" size={18} />
+                <FiCheckCircle size={18} />
                 <span className="text-sm">{item}</span>
               </div>
             ))}
@@ -79,26 +73,22 @@ export default function PreSignupSection() {
           {/* PRICING */}
           <div className="space-y-3 mb-6">
             <div className="bg-white text-black px-4 py-2 text-sm font-semibold">
-              Couples/Pair – 40K Monthly
+              Couples/Pair – ₦40,000 Monthly
             </div>
             <div className="bg-white text-black px-4 py-2 text-sm font-semibold">
-              Single – 25K Monthly
+              Single – ₦25,000 Monthly
             </div>
           </div>
 
-          {/* VALIDITY */}
-          {/* <p className="text-xs text-white/80 mb-6">
-            Offer valid till April 15th
-          </p> */}
-
+          {/* CTA */}
           <a
             href={createWhatsAppLink(
-              " Hello, I’m interested in the Primetime Wellness introductory pre-signup offer. I would like to secure a spot and get more details on the membership plans, pricing, and next steps. Kindly assist me.",
+              "Hello, I’m interested in joining PrimeTime Wellness. Please provide more details about membership plans and how to get started."
             )}
             target="_blank"
-            className="bg-black text-white px-6 py-3 text-sm font-semibold hover:bg-neutral-900 transition"
+            className="bg-red-600 px-6 py-3 text-sm font-semibold hover:bg-red-700 transition"
           >
-            Register Now
+            Join Now
           </a>
         </motion.div>
       </div>

@@ -1,37 +1,59 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Icon from "../ui/Icon";
 import Image from "next/image";
+import Link from "next/link";
+import { useRouter, usePathname } from "next/navigation";
 
 const Nav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [showNav, setShowNav] = useState(true);
   const [scrolled, setScrolled] = useState(false);
 
-  let lastScrollY = 0;
+  const lastScrollY = useRef(0);
 
+  const router = useRouter();
+  const pathname = usePathname();
+
+  // 🔥 Handle scroll hide/show nav
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      // Add background after scroll
       setScrolled(currentScrollY > 50);
 
-      // Show/hide nav based on scroll direction
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        setShowNav(false); // scrolling down
+      if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
+        setShowNav(false);
       } else {
-        setShowNav(true); // scrolling up
+        setShowNav(true);
       }
 
-      lastScrollY = currentScrollY;
+      lastScrollY.current = currentScrollY;
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // 🔥 Smart navigation (works across pages)
+  const handleNavClick = (id: string) => {
+    if (pathname === "/") {
+      // Scroll if already on homepage
+      const el = document.getElementById(id);
+      if (!el) return;
+
+      const yOffset = -80;
+      const y =
+        el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+      window.scrollTo({ top: y, behavior: "smooth" });
+    } else {
+      // Navigate to homepage with hash
+      router.push(`/#${id}`);
+    }
+  };
 
   return (
     <>
@@ -48,41 +70,54 @@ const Nav = () => {
           >
             <div className="px-6 md:px-16 py-4 flex justify-between items-center">
               {/* LOGO */}
-              <div>
+              <Link href="/">
                 <Image
                   width={73}
                   height={68}
-                  className="object-fit"
-                  src={"/logo.png"}
+                  src="/logo.png"
                   alt="LOGO"
                 />
-              </div>
+              </Link>
 
               {/* DESKTOP MENU */}
               <div className="hidden md:flex items-center gap-8 text-white font-medium">
-                <a href="#about" className="hover:text-red-500 transition">
+                <button
+                  onClick={() => handleNavClick("about")}
+                  className="hover:text-red-500 transition"
+                >
                   About
-                </a>
-                <a href="#programs" className="hover:text-red-500 transition">
-                  Programs
-                </a>
-                <a href="#facilities" className="hover:text-red-500 transition">
-                  Facilities
-                </a>
-                <a href="#membership" className="hover:text-red-500 transition">
-                  Membership
-                </a>
+                </button>
 
-                <div className="">
-                  <a
-                    href="https://wa.me/2349068457729?text=Hi%20I%27m%20interested%20in%20joining%20the%20gym"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-red-600 hover:bg-red-700 px-6 py-3 font-semibold transition text-center"
-                  >
-                    Join Now
-                  </a>
-                </div>
+                <button
+                  onClick={() => handleNavClick("programs")}
+                  className="hover:text-red-500 transition"
+                >
+                  Programs
+                </button>
+
+                <button
+                  onClick={() => handleNavClick("facilities")}
+                  className="hover:text-red-500 transition"
+                >
+                  Facilities
+                </button>
+
+                <button
+                  onClick={() => handleNavClick("membership")}
+                  className="hover:text-red-500 transition"
+                >
+                  Membership
+                </button>
+                <Link href="/gallery" className="hover:text-red-500 transition">Gallery</Link>
+
+                <a
+                  href="https://wa.me/2349068457729?text=Hi%20I%27m%20interested%20in%20joining%20the%20gym"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-red-600 hover:bg-red-700 px-6 py-3 font-semibold transition"
+                >
+                  Join Now
+                </a>
               </div>
 
               {/* MOBILE MENU BUTTON */}
@@ -115,28 +150,62 @@ const Nav = () => {
             </div>
 
             {/* MENU ITEMS */}
-            <nav className="flex flex-col gap-6 text-lg">
-              <a href="/home">Home</a>
-              <a href="#about" onClick={() => setMenuOpen(false)} className="hover:text-red-500 transition">
-                  About
-                </a>
-                <a href="#programs" onClick={() => setMenuOpen(false)} className="hover:text-red-500 transition">
-                  Programs
-                </a>
-                <a href="#facilities" onClick={() => setMenuOpen(false)} className="hover:text-red-500 transition">
-                  Facilities
-                </a>
-                <a href="#membership" onClick={() => setMenuOpen(false)} className="hover:text-red-500 transition">
-                  Membership
-                </a>
+            <nav className="flex flex-col items-center gap-6 text-lg">
+
+              <Link href="/" onClick={() => setMenuOpen(false)}>
+                Home
+              </Link>
+
+              <button
+                onClick={() => {
+                  handleNavClick("about");
+                  setMenuOpen(false);
+                }}
+              >
+                About
+              </button>
+
+              <button
+                onClick={() => {
+                  handleNavClick("programs");
+                  setMenuOpen(false);
+                }}
+              >
+                Programs
+              </button>
+
+              <button
+                onClick={() => {
+                  handleNavClick("facilities");
+                  setMenuOpen(false);
+                }}
+              >
+                Facilities
+              </button>
+
+              <button
+                onClick={() => {
+                  handleNavClick("membership");
+                  setMenuOpen(false);
+                }}
+              >
+                Membership
+              </button>
+
+               <Link href="/gallery" onClick={() => setMenuOpen(false)}>
+                Gallery
+              </Link>
             </nav>
 
+           
+
+            {/* CTA */}
             <div className="mt-10">
               <a
                 href="https://wa.me/2349068457729?text=Hi%20I%27m%20interested%20in%20joining%20the%20gym"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-red-600 hover:bg-red-700 px-6 py-3 font-semibold transition text-center"
+                className="bg-red-600 hover:bg-red-700 px-6 py-3 font-semibold transition text-center block"
               >
                 Join Now
               </a>

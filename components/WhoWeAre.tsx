@@ -58,7 +58,7 @@ export default function WhoWeAre() {
               transition={{ duration: 0.6 }}
             >
               <Image
-                src="/img/hero.jpeg"
+                src="/img/about.jpg"
                 alt="fitness"
                 width={600}
                 height={750}

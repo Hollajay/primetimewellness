@@ -5,10 +5,10 @@ import Marquee from "./ui/Marquee";
 import { AnimatePresence, motion } from "framer-motion";
 
 const slides = [
-   "/img/image3.jpeg",
-   "/img/image1.jpeg" ,
-  "/img/image11.jpeg" ,
-  "/img/image5.jpeg",
+   "/img/image3.jpg",
+   "/img/image12.jpg" ,
+  "/img/image1.jpg" ,
+  "/img/image10.jpg",
 ];
 
 export default function Hero() {
