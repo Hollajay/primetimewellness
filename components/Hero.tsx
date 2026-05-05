@@ -6,9 +6,9 @@ import { AnimatePresence, motion } from "framer-motion";
 
 const slides = [
    "/img/image3.jpg",
-   "/img/image12.jpg" ,
+   "/img/image10.jpg" ,
   "/img/image1.jpg" ,
-  "/img/image10.jpg",
+  "/img/image8.jpg",
 ];
 
 export default function Hero() {

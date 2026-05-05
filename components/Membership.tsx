@@ -13,7 +13,6 @@ export default function MembershipSection() {
   return (
     <section className="w-full bg-black py-20 px-6 md:px-12">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-        
         {/* LEFT VIDEO */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -22,9 +21,10 @@ export default function MembershipSection() {
         >
           <video
             autoPlay
-            loop
             muted
+            loop
             playsInline
+            preload="auto"
             className="object-cover w-full h-full"
           >
             <source src="/video/primetime3.mp4" type="video/mp4" />
@@ -83,7 +83,7 @@ export default function MembershipSection() {
           {/* CTA */}
           <a
             href={createWhatsAppLink(
-              "Hello, I’m interested in joining PrimeTime Wellness. Please provide more details about membership plans and how to get started."
+              "Hello, I’m interested in joining PrimeTime Wellness. Please provide more details about membership plans and how to get started.",
             )}
             target="_blank"
             className="bg-red-600 px-6 py-3 text-sm font-semibold hover:bg-red-700 transition"
