@@ -68,6 +68,19 @@ export default function GetInTouch() {
                 <p className="text-sm font-normal">@primetimewellnessng</p>
               </div>
             </div>
+
+            {/* Address*/}
+            <div className="border border-red-900/40 p-5 flex items-center gap-4 bg-[#0a0a0a]">
+              <Icon type="location" />
+              <div>
+                <p className="text-lg text-primary font-title font-extralight">
+                  Address
+                </p>
+                <p className="text-sm font-normal">100 Primetime junction Ajara estate after Akobo Ojurin Ibadan</p>
+              </div>
+            </div>
+
+
           </div>
 
           {/* WhatsApp Button */}
