@@ -22,7 +22,7 @@ export default function CustomSelect({
       {/* Select Box */}
       <div
         onClick={() => setOpen(!open)}
-        className="w-full bg-inputbg px-4 py-3 flex justify-between items-center cursor-pointer border-white border"
+        className="w-full bg-inputbg px-4 py-2 flex justify-between items-center cursor-pointer border-white border"
       >
         <span className="text-lg font-extralight">
           {value || placeholder}
@@ -44,7 +44,7 @@ export default function CustomSelect({
                 onChange(item);
                 setOpen(false);
               }}
-              className={`px-4 py-3 text-lg cursor-pointer transition
+              className={`px-4 py-2 text-lg cursor-pointer transition
                 ${
                   value === item
                     ? "bg-red-600 text-white"

@@ -6,9 +6,11 @@ import CustomSelect from "./ui/CustomSelect";
 export default function ContactForm() {
   const [form, setForm] = useState({
     name: "",
+    email:"",
     sex: "",
     phone: "",
     program: "",
+
   });
 
   const phoneNumber = "2349068457729";
@@ -24,6 +26,7 @@ export default function ContactForm() {
 Hello, I would like to register for Primetime Wellness.
 
 Full Name: ${form.name}
+Email: ${form.email}
 Sex: ${form.sex}
 Phone: ${form.phone}
 Program: ${form.program}
@@ -50,7 +53,20 @@ Kindly assist me with the next steps.
           value={form.name}
           onChange={handleChange}
           placeholder="Your Name"
-          className="w-full bg-inputbg px-4 py-3 text-lg outline-none border border-white"
+          className="w-full bg-inputbg px-4 py-2 text-lg outline-none border border-white"
+          required
+        />
+      </div>
+
+      <div className="flex flex-col gap-2">
+        <label className="text-lg font-light ">Email</label>
+        <input
+          type="text"
+          name="email"
+          value={form.email}
+          onChange={handleChange}
+          placeholder="johnola@gmail.com"
+          className="w-full bg-inputbg px-4 py-2 text-lg outline-none border border-white"
           required
         />
       </div>
@@ -73,7 +89,7 @@ Kindly assist me with the next steps.
           value={form.phone}
           onChange={handleChange}
           placeholder="e.g 08034567890"
-          className="w-full bg-inputbg px-4 py-3 text-lg outline-none border border-white"
+          className="w-full bg-inputbg px-4 py-2 text-lg outline-none border border-white"
           required
         />
       </div>
