@@ -2,9 +2,13 @@
 import { useState } from "react";
 import { FaAngleDown } from "react-icons/fa";
 
-const options = ["Gym", "Spa", "Swimming", "Football"];
-
-export default function CustomSelect({ value, onChange }: any) {
+export default function CustomSelect({
+  label,
+  options,
+  value,
+  onChange,
+  placeholder,
+}: any) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -12,7 +16,7 @@ export default function CustomSelect({ value, onChange }: any) {
       
       {/* Label */}
       <label className="block text-lg font-extralight mb-2 text-white">
-        Program / Facility
+        {label}
       </label>
 
       {/* Select Box */}
@@ -21,7 +25,7 @@ export default function CustomSelect({ value, onChange }: any) {
         className="w-full bg-inputbg px-4 py-3 flex justify-between items-center cursor-pointer border-white border"
       >
         <span className="text-lg font-extralight">
-          {value || "Select a Program or Facility"}
+          {value || placeholder}
         </span>
 
         <FaAngleDown
@@ -33,11 +37,11 @@ export default function CustomSelect({ value, onChange }: any) {
       {/* Dropdown */}
       {open && (
         <div className="absolute left-0 mt-2 w-full bg-footerblack rounded-md overflow-hidden shadow-lg z-50">
-          {options.map((item, index) => (
+          {options.map((item: string, index: number) => (
             <div
               key={index}
               onClick={() => {
-                onChange(item); // ✅ send value to form
+                onChange(item);
                 setOpen(false);
               }}
               className={`px-4 py-3 text-lg cursor-pointer transition

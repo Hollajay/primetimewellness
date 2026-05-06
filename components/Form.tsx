@@ -6,11 +6,12 @@ import CustomSelect from "./ui/CustomSelect";
 export default function ContactForm() {
   const [form, setForm] = useState({
     name: "",
+    sex: "",
     phone: "",
     program: "",
   });
 
-  const phoneNumber = "2348149776078";
+  const phoneNumber = "2349068457729";
 
   const handleChange = (e: any) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -23,6 +24,7 @@ export default function ContactForm() {
 Hello, I would like to register for Primetime Wellness.
 
 Full Name: ${form.name}
+Sex: ${form.sex}
 Phone: ${form.phone}
 Program: ${form.program}
 
@@ -30,7 +32,7 @@ Kindly assist me with the next steps.
     `;
 
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-      message
+      message,
     )}`;
 
     window.open(url, "_blank");
@@ -38,12 +40,10 @@ Kindly assist me with the next steps.
 
   return (
     <form onSubmit={handleSubmit} className="space-y-8">
-      
+
       {/* Name */}
       <div className="flex flex-col gap-2">
-        <label className="text-lg font-light ">
-          Full Name
-        </label>
+        <label className="text-lg font-light ">Full Name</label>
         <input
           type="text"
           name="name"
@@ -55,11 +55,18 @@ Kindly assist me with the next steps.
         />
       </div>
 
+      {/* Sex */}
+      <CustomSelect
+        label="Sex"
+        options={["Male", "Female"]}
+        value={form.sex}
+        onChange={(val: string) => setForm({ ...form, sex: val })}
+        placeholder="Select your sex"
+      />
+
       {/* Phone */}
       <div className="flex flex-col gap-2">
-        <label className="text-lg font-light">
-          Phone / WhatsApp
-        </label>
+        <label className="text-lg font-light">Phone / WhatsApp</label>
         <input
           type="text"
           name="phone"
@@ -71,30 +78,16 @@ Kindly assist me with the next steps.
         />
       </div>
 
-      {/* Program */}
-      {/* <div className="flex flex-col gap-2">
-        <label className="text-lg font-light">
-          Select Program
-        </label>
-        <select
-          name="program"
-          value={form.program}
-          onChange={handleChange}
-          className="w-full bg-inputbg px-4 py-3 text-lg outline-none border border-white "
-          required
-        >
-          <option className="accent-amber-700" value="">Choose a program</option>
-          <option value="Gym Membership">Gym Membership</option>
-          <option value="Swimming">Swimming</option>
-          <option value="Yoga">Yoga</option>
-          <option value="HIIT">HIIT</option>
-        </select>
-      </div> */}
+      
 
+      {/* Program */}
       <CustomSelect
-  value={form.program}
-  onChange={(val: any ) => setForm({ ...form, program: val })}
-/>
+        label="Program / Facility"
+        options={["Gym", "Spa", "Swimming", "Football"]}
+        value={form.program}
+        onChange={(val: string) => setForm({ ...form, program: val })}
+        placeholder="Select a program"
+      />
 
       {/* Button */}
       <button
