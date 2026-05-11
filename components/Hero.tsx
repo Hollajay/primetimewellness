@@ -27,7 +27,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative h-[100vh] w-full overflow-hidden text-white">
+    <section className="relative h-[100vh] text-white w-full overflow-hidden ">
       {/* Background Image Slider */}
 
       <AnimatePresence >
